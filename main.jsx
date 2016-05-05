@@ -9,7 +9,7 @@ import ReactDomServer from 'react-dom/server';
 const server = Http.createServer();
 
 server.on('request', (req, res) => {
-  let list = ReactDomServer.renderToString(<MyList name="Hello React" />);
+  let list = ReactDomServer.renderToStaticMarkup(<MyList name="Hello React" />);
   let compile = Jade.compileFile('./templates/index.jade', { pretty: true });
 
   res.writeHead(200, { 'Content-Type': 'text/html' });
